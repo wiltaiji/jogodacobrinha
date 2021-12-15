@@ -1,22 +1,22 @@
-let canvas = document.getElementById("snake");
-let context =canvas.getContext("2d");
-let box =32;
-let snake =[];
+let canvas = document.getElementById("snake"); /* obtendo elemento do Id snake e canvas recebendo esse elemento */
+let context =canvas.getContext("2d");/* obtendo o contexto do canvas em 2d */
+let box =32;      /* caixa com 32 pixel */
+let snake =[];     /* criando um array vazio  */
 snake[0] = {
     x:8*box, y: 8*box 
-}
-let direction ="right";
+}   /* desenhando uma cobra em x e y, fazendo que a posicao 0 receba x e y em plano cartesiano */
+let direction ="right"; /* variavel direcao */
 
 function criarBG() {
     context.fillStyle="blue";
     context.fillRect(0, 0, 16*box,16*box );
 
-}
+} /* criando a funcao da caixa (plano de fundo) e preenchedo a cor em azul */
 function criarCobrinha(){
 for( i=0; i<snake.length; i++){
      context.fillStyle="green";
      context.fillRect(snake[i].x ,snake[i].y , box ,box)
-   }
+   }/* criando a cobrinha */
 
 }
 
